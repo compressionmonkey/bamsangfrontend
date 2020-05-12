@@ -1,1 +1,1 @@
-web:nodemon ./build
+web:nodemon server/server.js
