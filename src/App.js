@@ -1,8 +1,8 @@
 import React from 'react';
 
 function App() {
-  const hello = () => {
-    fetch('http://localhost:5000/')
+  const logIn = () => {
+    fetch('https://bamsangfrontend.herokuapp.com/login')
   }
   return (
     <div>
@@ -10,7 +10,7 @@ function App() {
           position: 'relative',
           left: '500px',
           top: '300px'}}
-          onClick={hello}>Log in</button>
+          onClick={logIn}>Log in</button>
     </div>
   );
 }
