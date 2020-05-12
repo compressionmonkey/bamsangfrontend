@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 const spawn = require('child_process').spawn
 
-const process = spawn('python', ['./cv.py'])
+const python = spawn('python', ['./cv.py'])
 
 const port = process.env.PORT || 5000
 const publicPath = path.join(__dirname, '..', 'build')
@@ -15,7 +15,7 @@ app.get('*', (req, res) => {
  });
 
 app.get('/login', (req, res) => {
-    process.stdout.on('data', (data) => {
+    python.stdout.on('data', (data) => {
         console.log(data.toString())
     })
 }) 
