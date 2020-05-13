@@ -3,7 +3,7 @@ const app = express()
 const path = require('path')
 const spawn = require('child_process').spawn
 
-const runPython = spawn('heroku run python', ['server/cv.py'])
+const runPython = spawn('python', ['server/cv.py'])
 
 const port = process.env.PORT || 5000
 const publicPath = path.join(__dirname, '..', 'build')
