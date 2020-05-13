@@ -1,8 +1,10 @@
 import React from 'react';
 
 function App() {
-  const logIn = () => {
-    fetch('https://bamsangfrontend.herokuapp.com/login')
+  async function logIn(){
+    await fetch('https://bamsangfrontend.herokuapp.com/login', {
+      mode: 'no-cors'
+    }).then(data => console.log("success"))
   }
   return (
     <div>
