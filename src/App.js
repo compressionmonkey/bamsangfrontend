@@ -1,10 +1,13 @@
 import React from 'react';
 
 function App() {
-  async function logIn(){
-    await fetch('https://bamsangfrontend.herokuapp.com/login', {
+   function logIn(){
+    fetch('https://bamsangfrontend.herokuapp.com/login', {
       mode: 'no-cors'
-    }).then(data => console.log("success"))
+    })
+    .then(data => console.log(data))
+    .catch(error => console.log("Could not connect to server"))
+
   }
   return (
     <div>

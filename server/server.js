@@ -11,10 +11,12 @@ const publicPath = path.join(__dirname, '..', 'build')
 app.use(express.static(publicPath))
 
 app.get('*', (req, res) => {
+    console.log('heyyy')
     res.sendFile(path.join(publicPath, 'index.html'));
  });
 
 app.get('/login', (req, res) => {
+    console.log('heeyyyyyy')
     runPython.stdout.on('data', (data) => {
         console.log('Started webcam')
         console.log(data.toString())
