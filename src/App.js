@@ -2,7 +2,7 @@ import React from 'react';
 
 function App() {
    function logIn(){
-    fetch('https://bamsangfrontend.herokuapp.com/login', {
+    fetch('https://bamsangbackend.herokuapp.com/login', {
       mode: 'no-cors'
     })
     .then(data => console.log(data))
