@@ -63,7 +63,7 @@ function App() {
 
             <Modal.Footer>
               <Button onClick={ handleClose } variant="secondary">Close</Button>
-              <Button onClick={capture} variant="primary">Save changes</Button>
+              <Button onClick={capture} variant="primary">Take a snap</Button>
             </Modal.Footer>
           </Modal>
       {/* <button onClick={capture}>Capture photo</button> */}
