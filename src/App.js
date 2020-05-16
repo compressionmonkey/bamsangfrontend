@@ -22,7 +22,14 @@ function App() {
   const capture = useCallback(
     () => {
       const imageSrc = webcamRef.current.getScreenshot();
-      console.log(imageSrc)
+      const capture = document.createElement('img')
+      capture.src = imageSrc
+      console.log(capture)
+
+      fetch("https://bamsangbackend.herokuapp.com/login", {
+        method: "post",
+        body: capture
+      }).catch(console.error)
     },
     [webcamRef]
   )
