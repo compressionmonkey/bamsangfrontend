@@ -35,14 +35,6 @@ function App() {
   )
    const logIn = () => {
     setShow(true)
-    fetch('https://bamsangbackend.herokuapp.com/login', 
-    {
-      mode: 'no-cors'
-    }
-    )
-    .then(data => console.log(data))
-    .catch(error => console.log("Could not connect to server"))
-
   }
   return (
     <div>
