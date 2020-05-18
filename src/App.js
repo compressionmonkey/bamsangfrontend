@@ -29,7 +29,7 @@ function App() {
 
       formData.append('images', blob)
 
-      axios.post('http://localhost:5000/login', formData,{
+      axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
           headers: {
               'content-type': 'multipart/form-data'
           },
