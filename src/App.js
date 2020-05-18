@@ -29,12 +29,20 @@ function App() {
 
       formData.append('images', blob)
 
-      axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
-          headers: {
-              "Access-Control-Allow-Origin": "*",
+      fetch('https://bamsangbackend.herokuapp.com/login', {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+              'Access-Control-Allow-Origin': '*',
               'content-type': 'multipart/form-data'
-          }
-        })
+        }
+      })
+      // axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
+      //     headers: {
+      //         "Access-Control-Allow-Origin": "*",
+      //         'content-type': 'multipart/form-data'
+      //     }
+      //   })
     },
     [webcamRef]
   )
