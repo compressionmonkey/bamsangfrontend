@@ -31,9 +31,9 @@ function App() {
 
       axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
           headers: {
+              "Access-Control-Allow-Origin": "*",
               'content-type': 'multipart/form-data'
-          },
-          mode: 'no-cors'
+          }
         })
     },
     [webcamRef]
