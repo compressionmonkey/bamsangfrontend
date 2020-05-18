@@ -1,10 +1,12 @@
-import React, { useRef, useCallback, useState } from 'react';
+import React, { useRef, useCallback, useState } from 'react'
 import Webcam from "react-webcam"
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import axios from 'axios'
+
+
 function App() {
-  const [clicked, setclicked] = useState(false)
   const [show, setShow] = useState(false)
 
   const handleClose = () => {
@@ -20,16 +22,20 @@ function App() {
   const webcamRef = useRef(null);
    
   const capture = useCallback(
-    () => {
-      const imageSrc = webcamRef.current.getScreenshot();
-      const capture = document.createElement('img')
-      capture.src = imageSrc
-      console.log(capture)
+    async () => {
+      const imageSrc = webcamRef.current.getScreenshot()
+      const blob = await fetch(imageSrc).then((res) => res.blob())
 
-      fetch("https://bamsangbackend.herokuapp.com/login", {
-        method: "post",
-        body: capture
-      }).catch(console.error)
+      const formData = new FormData();
+
+      formData.append('images', blob)
+
+      axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
+          headers: {
+              'content-type': 'multipart/form-data'
+          },
+          mode: 'no-cors'
+        })
     },
     [webcamRef]
   )
@@ -65,7 +71,6 @@ function App() {
               <Button onClick={capture} variant="primary">Take a snap</Button>
             </Modal.Footer>
           </Modal>
-      {/* <button onClick={capture}>Capture photo</button> */}
     </div>
   );
 }
