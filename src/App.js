@@ -25,12 +25,11 @@ function App() {
     async () => {
       const imageSrc = webcamRef.current.getScreenshot()
       const blob = await fetch(imageSrc).then((res) => res.blob())
-
       const formData = new FormData();
 
       formData.append('images', blob)
 
-      axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
+      axios.post('http://localhost:5000/login', formData,{
           headers: {
               'content-type': 'multipart/form-data'
           },
