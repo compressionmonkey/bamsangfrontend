@@ -38,7 +38,7 @@ function App() {
       //   },
       //   body: JSON.stringify(formData)
       // })
-      axios.post('https://bamsangbackend.herokuapp.com/login', formData,{
+      axios.post('https://bamsangai.herokuapp.com/', formData,{
           headers: {
               "Access-Control-Allow-Origin": "*",
               'content-type': 'multipart/form-data'
