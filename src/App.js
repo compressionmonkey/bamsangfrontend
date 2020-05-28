@@ -26,8 +26,9 @@ function App() {
       const imageSrc = webcamRef.current.getScreenshot()
       // const blob = await fetch(imageSrc).then((res) => res.blob())
       const formData = new FormData();
+      const blob = await fetch(imageSrc).then(res => res.blob());
 
-      formData.append('images', imageSrc)
+      formData.append('images', blob )
 
       // fetch('https://bamsangbackend.herokuapp.com/login', {
       //   method: 'POST',
