@@ -130,7 +130,10 @@ function App() {
               options = {{
                 maintainAspectRatio: false
               }} 
-            /> && predictprices()
+            />
+          }
+          {
+            graph && predictprices()
           }
     </div>
   );
