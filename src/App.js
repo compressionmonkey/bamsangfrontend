@@ -32,11 +32,30 @@ function App() {
                 'rgba(255, 159, 64, 1)'
             ],
             borderWidth: 1
+        }, {
+            label: '# of Names',
+            data: [7, 10, 5, 3, 8, 4],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(54, 162, 235, 1)'
+            ],
+            borderWidth: 1
         }]
   }
 
   const handleClose = () => {
     setShow(false)
+  }
+
+  const predictprices = () => {
+    axios.get('https://bamsangai.herokuapp.com/priceprediction')
   }
 
   const videoConstraints = {
@@ -111,7 +130,7 @@ function App() {
               options = {{
                 maintainAspectRatio: false
               }} 
-            />
+            /> && predictprices()
           }
     </div>
   );
