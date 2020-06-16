@@ -94,23 +94,21 @@ function App() {
     setShow(true)
   }
   return (
-    <div>
+    <div style={{background:"black"}}>
         <section class="animated-grid">
-          <div 
-          class="card"
-          >1</div>
-          <div class="card">2</div>
-          <div class="card">3</div>
-          <div class="card">4</div>
-          <div class="card">5</div>
-          <div class="card">6</div>
-          <div class="card">7</div>
-          <div class="card">8</div>
-          <div class="card">9</div>
-          <div class="card">10</div>
-          <div class="card">11</div>
-          <div class="card">12</div>
-          <div class="card">13</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>1</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>2</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>3</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>4</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>5</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>6</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>7</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>8</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>9</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>10</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>11</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>12</div>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}>13</div>
 
         </section>
         {!graph && <button style={{
