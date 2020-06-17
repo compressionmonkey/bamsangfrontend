@@ -16,8 +16,8 @@ function App() {
 
 
   const videoConstraints = {
-    width: 1280,
-    height: 720,
+    width: 300,
+    height: 300,
     facingMode: "user"
   }
 
@@ -76,10 +76,10 @@ function App() {
             <Modal.Body>
             <Webcam
         audio={false}
-        height={550}
+        // height={550}
         ref={webcamRef}
         screenshotFormat="image/jpeg"
-        width={750}
+        // width={750}
         videoConstraints={videoConstraints}
       />
             </Modal.Body>

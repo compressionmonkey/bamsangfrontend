@@ -1,6 +1,12 @@
 @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
-
+.modal-body{    
+display: flex;
+justify-content: center;
+}
+video{
+   width: 65%;
+}
 @media (orientation: portrait){
 .animated-grid {
     height: 60vh;
