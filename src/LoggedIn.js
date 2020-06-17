@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState } from "react"
 import { Line } from 'react-chartjs-2'
 import axios from 'axios'
 function LoggedIn(){
+    const [prediction, setPrediction] = useState()
     const data = {
         labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
             datasets: [{
@@ -43,6 +44,7 @@ function LoggedIn(){
       }
       const predictprices = () => {
         axios.get('https://bamsangai.herokuapp.com/priceprediction')
+        .then(response => setPrediction(response.data))
       }
     return(
         <div>
@@ -55,6 +57,7 @@ function LoggedIn(){
               }} 
             />
             {predictprices()}
+            prediction is {prediction}
             </div>
     )
 }
