@@ -6,11 +6,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import axios from 'axios'
 import LoggedIn from './LoggedIn'
 
-// import imagepath from 'https://unsplash.com/photos/8n9E1ZO7F80'
 function App() {
   const [show, setShow] = useState(false)
   const [graph, setGraph] = useState(false)
-
+ 
   const handleClose = () => {
     setShow(false)
   }
@@ -66,9 +65,8 @@ function App() {
           <div class="card" style={{background:"rgb(36,243, 147)"}}>10</div>
           <div class="card" style={{background:"rgb(36,243, 147)"}}>11</div>
           <div class="card" style={{background:"rgb(36,243, 147)"}}>12</div>
-          <div class="card" style={{background:"rgb(36,243, 147)"}}>13</div>
-        
-          <button onClick={logIn}>Log in</button>
+          <div class="card" style={{background:"rgb(36,243, 147)"}}
+          onClick={logIn}>Log In!</div>
 
           <Modal size="lg" show={show} onHide={handleClose}>
             <Modal.Header closeButton>
