@@ -131,5 +131,6 @@ video{
  }
  .card:last-child{
     grid-area: r;
+    cursor: pointer;
  }
  
