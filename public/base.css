@@ -6,6 +6,24 @@ body {
     font-family: 'Noto Sans', sans-serif;
 }
 
+@media (orientation: portrait){
+.animated-grid {
+    height: 60vh;
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 
+        'a  b  c  d'
+        'l  r  r  e'
+        'k  r  r  f'
+        'j  i  h  g';
+    
+    grid-template-rows: repeat(4, 25%);
+    grid-template-columns: 30px 200px auto 100px;
+
+    --stagger-delay: 100ms;
+}
+}
+@media (orientation: landscape){
 .animated-grid {
     height: 85vh;
     display: grid;
@@ -20,6 +38,7 @@ body {
     grid-template-columns: 240px auto auto 240px;
 
     --stagger-delay: 100ms;
+}
 }
 
 @keyframes cardEntrance {
