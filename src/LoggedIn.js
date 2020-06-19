@@ -1,13 +1,23 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import { Line } from 'react-chartjs-2'
 import axios from 'axios'
 function LoggedIn(){
     const [prediction, setPrediction] = useState()
+    const [price, setPrice] = useState()
+    useEffect(() => {
+        fetch('https://bamsangbackend.herokuapp.com/port')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setPrice(data)
+        })
+    })
     const data = {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['openPrice', 'highPrice', 'lowPrice'],
             datasets: [{
                 label: '# of Votes',
-                data: [12, 19, 3, 5, 2, 3],
+                data: price,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
