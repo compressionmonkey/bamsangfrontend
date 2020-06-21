@@ -10,6 +10,7 @@ function LoggedIn(){
     const [bchprice, setbchPrice] = useState()
     const [ltcprice, setltcPrice] = useState()
     useEffect(() => {
+        predictprices()
         fetch('https://bamsangbackend.herokuapp.com/getbtc')
         .then(res => res.json())
         .then(res => {
@@ -146,15 +147,14 @@ function LoggedIn(){
                 maintainAspectRatio: false
               }} 
             />
-        <Line
+        {/* <Line
               data = {lastthreedata}
               width = {50}
               height = {100}
               options = {{
                 maintainAspectRatio: false
               }} 
-            />
-            {prediction ? console.log(prediction):predictprices()}
+            /> */}
             prediction is {prediction}
             </div>
     )
