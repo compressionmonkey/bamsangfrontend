@@ -53,17 +53,12 @@ function LoggedIn(){
             setltcPrice(data)
         })
     })
-    const data = {
+    const firstthreedata = {
         labels: ['openPrice', 'highPrice', 'lowPrice'],
             datasets: [{
                 label: 'BTC to USD',
                 data: btcprice,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
                     'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
@@ -79,12 +74,7 @@ function LoggedIn(){
                 label: 'BNB to USD',
                 data: bnbprice,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(255, 206, 86, 0.2)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
@@ -94,27 +84,21 @@ function LoggedIn(){
                 label: 'ETH to USD',
                 data: ethprice,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(54, 162, 235, 0.2)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
                 ],
                 borderWidth: 1
-            }, {
+            }]
+      }
+    const lastthreedata = {
+        labels: ['openPrice', 'highPrice', 'lowPrice'],
+            datasets: [{
                 label: 'XRP to USD',
                 data: xrpprice,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
                     'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
@@ -124,12 +108,7 @@ function LoggedIn(){
                 label: 'BCH to USD',
                 data: bchprice,
                 backgroundColor: [
-                    'rgba(255, 99, 132, 0.2)',
-                    'rgba(54, 162, 235, 0.2)',
-                    'rgba(255, 206, 86, 0.2)',
-                    'rgba(75, 192, 192, 0.2)',
-                    'rgba(153, 102, 255, 0.2)',
-                    'rgba(255, 159, 64, 0.2)'
+                    'rgba(153, 102, 255, 0.2)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
@@ -159,9 +138,17 @@ function LoggedIn(){
     return(
         <div>
         <Line
-              data = {data}
-              width = {100}
-              height = {200}
+              data = {firstthreedata}
+              width = {50}
+              height = {100}
+              options = {{
+                maintainAspectRatio: false
+              }} 
+            />
+        <Line
+              data = {lastthreedata}
+              width = {50}
+              height = {100}
               options = {{
                 maintainAspectRatio: false
               }} 
