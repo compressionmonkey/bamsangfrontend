@@ -3,21 +3,61 @@ import { Line } from 'react-chartjs-2'
 import axios from 'axios'
 function LoggedIn(){
     const [prediction, setPrediction] = useState()
-    const [price, setPrice] = useState()
+    const [btcprice, setbtcPrice] = useState()
+    const [bnbprice, setbnbPrice] = useState()
+    const [ethprice, setethPrice] = useState()
+    const [xrpprice, setxrpPrice] = useState()
+    const [bchprice, setbchPrice] = useState()
+    const [ltcprice, setltcPrice] = useState()
     useEffect(() => {
-        fetch('https://bamsangbackend.herokuapp.com/port')
+        fetch('https://bamsangbackend.herokuapp.com/getbtc')
         .then(res => res.json())
         .then(res => {
             let data = []
             data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
-            setPrice(data)
+            setbtcPrice(data)
+        })
+        fetch('https://bamsangbackend.herokuapp.com/getbnb')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setbnbPrice(data)
+        })
+        fetch('https://bamsangbackend.herokuapp.com/geteth')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setethPrice(data)
+        })
+        fetch('https://bamsangbackend.herokuapp.com/getxrp')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setxrpPrice(data)
+        })
+        fetch('https://bamsangbackend.herokuapp.com/getbch')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setbchPrice(data)
+        })
+        fetch('https://bamsangbackend.herokuapp.com/getltc')
+        .then(res => res.json())
+        .then(res => {
+            let data = []
+            data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
+            setltcPrice(data)
         })
     })
     const data = {
         labels: ['openPrice', 'highPrice', 'lowPrice'],
             datasets: [{
                 label: 'BTC to USD',
-                data: price,
+                data: btcprice,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
@@ -36,8 +76,68 @@ function LoggedIn(){
                 ],
                 borderWidth: 1
             }, {
-                label: '# of Names',
-                data: [7, 10, 5, 3, 8, 4],
+                label: 'BNB to USD',
+                data: bnbprice,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'ETH to USD',
+                data: ethprice,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'XRP to USD',
+                data: xrpprice,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'BCH to USD',
+                data: bchprice,
+                backgroundColor: [
+                    'rgba(255, 99, 132, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(54, 162, 235, 1)'
+                ],
+                borderWidth: 1
+            }, {
+                label: 'LTC to USD',
+                data: ltcprice,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
                     'rgba(54, 162, 235, 0.2)',
