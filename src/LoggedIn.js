@@ -52,7 +52,7 @@ function LoggedIn(){
             data.push(parseFloat(res.openPrice), parseFloat(res.highPrice), parseFloat(res.lowPrice))
             setltcPrice(data)
         })
-    })
+    }, [])
     const firstthreedata = {
         labels: ['openPrice', 'highPrice', 'lowPrice'],
             datasets: [{
@@ -137,6 +137,7 @@ function LoggedIn(){
       }
     return(
         <div>
+        {  }
         <Line
               data = {firstthreedata}
               width = {50}
@@ -153,7 +154,7 @@ function LoggedIn(){
                 maintainAspectRatio: false
               }} 
             />
-            {predictprices()}
+            {prediction ? console.log(prediction):predictprices()}
             prediction is {prediction}
             </div>
     )
