@@ -16,7 +16,7 @@ function LoggedIn(){
     const data = {
         labels: ['openPrice', 'highPrice', 'lowPrice'],
             datasets: [{
-                label: '# of Votes',
+                label: 'BTC to USD',
                 data: price,
                 backgroundColor: [
                     'rgba(255, 99, 132, 0.2)',
