@@ -136,17 +136,19 @@ function LoggedIn(){
         {  }
         <Line
               data = {btcdata}
-              width = {50}
-              height = {100}
+              width = {"15%"}
+              height = {"30%"}
               options = {{
+                responsive: true,
                 maintainAspectRatio: false
               }} 
             />
         <Line
               data = {otherdata}
-              width = {50}
-              height = {100}
+              width = {"15%"}
+              height = {"50%"}
               options = {{
+                responsive: true,
                 maintainAspectRatio: false
               }} 
             />
