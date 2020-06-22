@@ -9,9 +9,10 @@ import LoggedIn from './LoggedIn'
 function App() {
   const [show, setShow] = useState(false)
   const [graph, setGraph] = useState(false)
- 
+  const [errorMsg, setErrorMsg] = useState('')
   const handleClose = () => {
     setShow(false)
+    setErrorMsg('')
   }
 
 
@@ -44,6 +45,9 @@ function App() {
             setGraph(true)
           }
           )
+          .catch(err => {
+            setErrorMsg(err.response.data)
+          })
     },
     [webcamRef]
   )
@@ -82,6 +86,7 @@ function App() {
         // width={750}
         videoConstraints={videoConstraints}
       />
+      {errorMsg && <p style={{color:"red"}}>{errorMsg}</p>}
             </Modal.Body>
 
             <Modal.Footer>
