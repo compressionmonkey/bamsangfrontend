@@ -77,14 +77,14 @@ function LoggedIn(){
                     'rgba(255, 0, 0, 0)'
                 ],
                 borderColor: [
-                    'rgba(0, 255, 0, 0)'
+                    'rgba(0, 255, 0, 1)'
                 ],
                 borderWidth: 1
             }, {
                 label: 'ETH to USD',
                 data: ethprice,
                 backgroundColor: [
-                    'rgba(0, 0, 255, 0)'
+                    'rgba(0, 0, 255, 1)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
