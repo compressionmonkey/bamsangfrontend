@@ -74,17 +74,17 @@ function LoggedIn(){
                 label: 'BNB to USD',
                 data: bnbprice,
                 backgroundColor: [
-                    'rgba(255, 206, 86, 0.2)'
+                    'rgba(255, 0, 0, 0)'
                 ],
                 borderColor: [
-                    'rgba(54, 162, 235, 1)'
+                    'rgba(0, 255, 0, 0)'
                 ],
                 borderWidth: 1
             }, {
                 label: 'ETH to USD',
                 data: ethprice,
                 backgroundColor: [
-                    'rgba(54, 162, 235, 0.2)'
+                    'rgba(0, 0, 255, 0)'
                 ],
                 borderColor: [
                     'rgba(54, 162, 235, 1)'
