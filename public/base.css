@@ -7,7 +7,8 @@ justify-content: center;
 video{
    width: 65%;
 }
-@media (orientation: portrait){
+/* @media (orientation: portrait){ */
+@media only screen and (max-width: 600px) and (min-width: 200px){
 .animated-grid {
     height: 60vh;
     display: grid;
@@ -24,7 +25,8 @@ video{
     --stagger-delay: 100ms;
 }
 }
-@media (orientation: landscape){
+/* @media (orientation: landscape){ */
+@media only screen and (max-width: 2000px) and (min-width: 601px){
 .animated-grid {
     height: 85vh;
     display: grid;
