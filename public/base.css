@@ -13,10 +13,10 @@ video{
     display: grid;
     gap: 1rem;
     grid-template-areas: 
-        'a  b  c  d'
+        'a    c   d'
         'l  r  r  e'
         'k  r  r  f'
-        'j  i  h  g';
+        'j    c   g';
     
     grid-template-rows: repeat(4, 25%);
     grid-template-columns: 30px 200px auto 100px;
@@ -30,10 +30,10 @@ video{
     display: grid;
     gap: 1rem;
     grid-template-areas: 
-        'a  b     d'
+        'a  b  c  d'
         'l  r  r  e'
         'k  r  r  f'
-        'j  i     g';
+        'j  i  h  g';
     
     grid-template-rows: repeat(4, 25%);
     grid-template-columns: 240px auto auto 240px;
